@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  letter-spacing: 1px;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  color: whitesmoke;
+  background-color: #111827;
+  cursor: default;
+  user-select: none;
+}
+
+@keyframes changeShape {
+  0% {
+    border-radius: 60% 40% 30% 70%/ 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/ 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/ 60% 30% 70% 40%;
+  }
+}
+
+.bubble {
+  width: 22rem;
+  height: 22rem;
+  background-color: #3498db;
+  animation: changeShape 4s infinite;
+}
+.button-container {
+  display: flex;
+  margin-top: 6px;
+  gap: 18px;
+}
+
+.custom-button {
+  transition: all 0.3s ease-in-out;
+  width: fit-content;
+  height: 3.2rem;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border: black solid;
+  border-width: 2px;
+}
+
+.custom-button:hover {
+  background-position: 100% 0;
+  color: whitesmoke;
+}
+
+.custom-button:nth-child(1) {
+  background-image: linear-gradient(to right, #111827 50%, transparent 50%);
+  background-size: 200% 100%;
+  backdrop-filter: blur(12px);
+}
+
+.custom-button:nth-child(2) {
+  background-image: linear-gradient(to right, black 50%, transparent 50%);
+  background-size: 200% 100%;
+  backdrop-filter: blur(12px);
+}
+.first-page {
+  background-color: black;
+}
+
+.skill-card-container {
+  width: 240px;
+  height: 160px;
+  perspective: 1000px;
+  transition: transform 0.6s;
+}
+
+.skill-card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.skill-card:hover,
+.skill-card-container.flipped {
+  transform: rotateX(180deg);
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #606060;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #00c853;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.back {
+  transform: rotateX(180deg) scaleY(1);
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Define the thumb style */
+*::-webkit-scrollbar-thumb {
+  background: transparent !important;
+  border-radius: 12px;
+  transition: all 0.3 ease-in-out;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: transparent !important;
+  border-radius: 12px;
+  transition: all 0.3 ease-in-out;
+}
+
+/* Define the track style */
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+  border-radius: 12px;
+}
+/* Define the thumb style */
+.img_scroller::-webkit-scrollbar-thumb {
+  background: #00c853 !important;
+  border-radius: 12px;
+  transition: all 0.3 ease-in-out;
+}
+
+.img_scroller::-webkit-scrollbar-thumb:hover {
+  background: #007e34 !important;
+  border-radius: 12px;
+  transition: all 0.3 ease-in-out;
+}
+
+.img_scroller::-webkit-scrollbar-track {
+  background: #000000 !important;
+  border-radius: 12px;
+}
