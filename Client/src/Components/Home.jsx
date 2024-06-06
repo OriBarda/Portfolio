@@ -61,24 +61,24 @@ const Home = () => {
   return (
     <>
       <motion.section
-        className="flex md:flex-row flex-col items-center justify-evenly h-screen p-10 relative overflow-hidden text-gray-200 bg-gray-900"
+        className="flex sm:flex-row flex-col items-center justify-evenly min-h-screen p-10 py-12 sm:py-0 relative sm:overflow-hidden text-gray-200 bg-gray-900"
         ref={secondSectionRef}
       >
         <motion.div
           className="absolute w-0 h-0 
           border-t-[640px] border-t-transparent
-          border-l-[715px] border-l-green-500
+          sm:border-l-[715px] border-l-green-500
           border-b-[720px] border-b-transparent bottom-0 left-0"
           style={mountStyle}
         />
         <motion.div
-          className="relative z-50 flex w-full justify-evenly"
+          className="relative z-50 flex w-full justify-evenly sm:flex-row flex-col-reverse"
           style={contentStyle}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <motion.div className="max-w-lg text-left relative z-10">
+          <motion.div className="max-w-lg sm:text-left text-center flex flex-col sm:items-start items-center relative z-10">
             <motion.h2
               className="text-4xl font-extralight mb-4"
               style={headerStyle}

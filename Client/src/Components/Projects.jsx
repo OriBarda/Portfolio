@@ -79,31 +79,31 @@ function ProjectsCarousel() {
     <div className="overflow-hidden flex justify-center pt-8">
       <button
         onClick={prevSlide}
-        className="absolute left-0 top-2/3 transform -translate-y-1/2 text-emerald-400 hover:text-emerald-200 transition-all ease-in-out ml-4 hover:bg-white hover:bg-opacity-10 text-6xl font-bold bg-transparent rounded-full shadow-md z-10"
+        className="absolute left-0 top-2/3 transform -translate-y-1/2 text-emerald-400 hover:text-emerald-200 transition-all ease-in-out ml-4 hover:bg-white hover:bg-opacity-10 text-6xl font-bold bg-transparent rounded-full shadow-md z-[500]"
       >
         <IoIosArrowDown />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute left-0 top-1/3 transform -translate-y-1/2 text-emerald-400 hover:text-emerald-200 transition-all ease-in-out ml-4 hover:bg-white hover:bg-opacity-10 text-6xl font-bold bg-transparent rounded-full shadow-md z-10"
+        className="absolute left-0 top-1/3 transform -translate-y-1/2 text-emerald-400 hover:text-emerald-200 transition-all ease-in-out ml-4 hover:bg-white hover:bg-opacity-10 text-6xl font-bold bg-transparent rounded-full shadow-md z-[500]"
       >
         <IoIosArrowUp />
       </button>
       {projectsData.map((project, index) => (
         <div
           key={index}
-          className={`absolute w-[85vw] h-fit flex flex-col justify-center items-center transition-opacity duration-500 ${
+          className={`absolute w-full h-full transition-opacity duration-500 sm:space-y-0 space-y-12 ${
             index === currentProjectIndex ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="group relative">
+          <div className="group sm:flex-row flex-col relative w-full h-full flex items-center justify-center">
             <img
               src={project.images[currentProjectImage]}
               alt={project.name}
-              className="w-full max-h-screen mb-4 rounded-lg"
+              className="w-[95vw] h-[95vh] mb-4 rounded-lg"
             />
-            <div className="absolute inset-0 z-50 w-full h-full flex items-center justify-center flex-col bg-black bg-opacity-0 group-hover:bg-opacity-60 text-white transition-all ease-in-out duration-500 opacity-0 group-hover:opacity-100">
-              <div className="flex flex-col items-center px-20 text-center h-full justify-evenly py-20">
+            <div className="sm:absolute inset-0 z-50 w-full h-full flex items-center justify-center flex-col sm:bg-black bg-transparent sm:bg-opacity-0 sm:group-hover:bg-opacity-60 text-white transition-all ease-in-out duration-500 sm:opacity-0 sm:group-hover:opacity-100">
+              <div className="flex flex-col items-center sm:px-20 px-10 text-center h-full justify-evenly py-20">
                 <h3
                   className={`text-4xl font-bold uppercase ${project.style[0]}`}
                 >
@@ -119,7 +119,7 @@ function ProjectsCarousel() {
                     );
                   })}
                 </div>
-                <div className="overflow-x-scroll overflow-y-hidden img_scroller max-w-screen">
+                <div className="overflow-x-scroll overflow-y-hidden sm:img_scroller max-w-screen">
                   <div className="img_scroller flex flex-row items-center justify-evenly">
                     {project.images.map((image, index) => (
                       <img

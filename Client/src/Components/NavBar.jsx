@@ -30,7 +30,7 @@ function NavBar() {
   return (
     <>
       <div
-        className={`fixed pr-14 flex justify-evenly items-center z-[1000] ${
+        className={`fixed sm:pr-14 pr-0 flex justify-evenly items-center z-[1000] ${
           isMobile
             ? "bottom-0 bg-gray-900 flex-row w-screen h-20"
             : "right-0 flex-col w-20 h-screen py-32"

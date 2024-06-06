@@ -168,7 +168,7 @@ const About = () => {
   return (
     <>
       <motion.section
-        className={`w-screen min-h-screen flex flex-col justify-center items-center transition-opacity duration-300 bg-gray-900 p-12 sm:py-16 `}
+        className={`w-screen min-h-screen flex flex-col justify-center items-center transition-opacity duration-300 bg-gray-900 py-8 sm:py-16 `}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -181,8 +181,8 @@ const About = () => {
             About <span className="text-emerald-500 font-light">Me</span>
           </header>
         </div>
-        <div className="flex md:flex-row flex-col">
-          <div className="text-gray-300 w-[500px] text-2xl p-4 m-3">
+        <div className="flex md:flex-row flex-col flex-wrap">
+          <div className="text-gray-300 sm:w-[500px] text-2xl p-4 m-3">
             <header className="font-extrabold text-4xl">
               Information about me
             </header>
@@ -235,7 +235,7 @@ const About = () => {
               className="w-60 h-64 rounded-lg border-gray-800 border-2 bg-transparent hover:drop-shadow-2xl hover:-translate-y-2 shadow-emerald-300 hover:border-emerald-600 transition-all ease-in-out duration-700 flex flex-col justify-start items-start p-6"
             >
               <motion.header
-                className="font-extrabold text-6xl text-emerald-500"
+                className="font-extrabold text-6xl text-emerald-500 text-center"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -334,11 +334,11 @@ const About = () => {
         >
           My <span className="font-light text-emerald-500">Timeline</span>
         </motion.h4>
-        <div className="grid lg:grid-cols-2 grid-cols-1 p-4">
+        <div className="grid lg:grid-cols-2 grid-cols-1 sm:py-12 py-24 px-6">
           {timelineData.map((item, index) => (
             <motion.div
               key={index}
-              className="flex p-4 md:flex-row flex-col"
+              className="flex p-4 md:flex-row flex-col w-fit"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -356,7 +356,7 @@ const About = () => {
                   {item.title}
                   <span className="font-light"> - {item.company}</span>
                 </h5>
-                <p className="w-96">{item.description}</p>
+                <p className="sm:w-96">{item.description}</p>
               </div>
             </motion.div>
           ))}
